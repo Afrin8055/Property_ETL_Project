@@ -1,0 +1,39 @@
+DATA VALIDATION REPORT
+======================
+
+--- Table: property ---
+JSON records: 1, DB records: 10088
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Sample field mismatches (max 10):
+
+--- Table: leads ---
+JSON records: 1, DB records: 10088
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [10089, 10090, 10091, 10092, 10093, 10094, 10095, 10096, 10097, 10098]
+Sample field mismatches (max 10):
+
+--- Table: valuation ---
+JSON records: 1, DB records: 8398
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+Sample field mismatches (max 10):
+
+--- Table: hoa ---
+JSON records: 1, DB records: 6726
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [1, 2, 3, 4, 5, 7, 8, 10, 12, 13]
+Sample field mismatches (max 10):
+
+--- Table: rehab ---
+JSON records: 1, DB records: 10088
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Sample field mismatches (max 10):
+
+--- Table: taxes ---
+JSON records: 1, DB records: 10088
+Missing property_ids in DB: [None]
+Extra property_ids in DB: [10089, 10090, 10091, 10092, 10093, 10094, 10095, 10096, 10097, 10098]
+Sample field mismatches (max 10):
+

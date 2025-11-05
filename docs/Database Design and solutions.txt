@@ -1,0 +1,50 @@
+Database Design and Solution
+Schema Overview & Design Decisions
+
+Central Table: property
+
+Holds main property details.
+
+Acts as the parent table for all nested/related tables.
+
+Fields include: property_id (PK), property_title, address, market, flood, year_built, sqft_total, latitude, longitude, school_average, etc.
+
+Leads Table: leads
+
+Tracks lead info for properties.
+
+Fields: lead_id (PK), property_id (FK → property.property_id), reviewed_status, most_recent_status, source, occupancy, net_yield, irr, selling_reason, seller_retained_broker, final_reviewer.
+
+Valuation Table: valuation
+
+Stores valuation information for each property.
+
+Fields: valuation_id (PK), property_id (FK → property.property_id), previous_rent, list_price, zestimate, arv, expected_rent, rent_zestimate, low_fmr, high_fmr, redfin_value.
+
+HOA Table: hoa
+
+Contains HOA-related information.
+
+Fields: hoa_id (PK), property_id (FK → property.property_id), hoa_fee, hoa_flag, hoa.
+
+Rehab Table: rehab
+
+Contains rehab/renovation details for properties.
+
+Fields: rehab_id (PK), property_id (FK → property.property_id), underwriting_rehab, rehab_calculation, paint, flooring_flag, foundation_flag, roof_flag, hvac_flag, kitchen_flag, bathroom_flag, appliances_flag, windows_flag, landscaping_flag, trashout_flag.
+
+Taxes Table: taxes
+
+Tracks tax info for each property.
+
+Fields: tax_id (PK), property_id (FK → property.property_id), taxes.
+
+Design Decisions:
+
+property is the central table; all other tables reference property_id as a foreign key.
+
+Each nested table can have multiple rows per property (e.g., multiple valuations).
+
+Data types are chosen based on the JSON input: DECIMAL for monetary values, VARCHAR for text, INT for IDs.
+
+Auto-increment IDs are used for all PKs to ensure uniqueness.

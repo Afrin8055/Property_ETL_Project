@@ -1,0 +1,37 @@
+ETL Logic and Approach
+
+Read JSON
+
+Load the raw JSON file into Python using json.load.
+
+Normalize Data
+
+Split the JSON into multiple tables:
+
+Simple key-value pairs → property.
+
+Nested lists → valuation, hoa, rehab.
+
+Map fields using Field Config to correct table.
+
+Database Operations
+
+Use MySQL connector (mysql-connector-python) to connect.
+
+ensure_table() ensures all required columns exist.
+
+truncate_table() clears old data before inserting.
+
+insert_main() inserts property-level records.
+
+insert_nested() inserts nested records with foreign keys.
+
+Transaction Handling
+
+Each property + nested data is committed after insertion to prevent partial writes.
+
+Logging
+
+Print statements indicate inserted IDs and added columns.
+
+Optional: Can redirect to a log file for audit.
