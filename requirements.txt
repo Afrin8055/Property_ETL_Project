@@ -1,2 +1,31 @@
+Requirements
+
+Python 3.8+
+
+Libraries:
+
 mysql-connector-python
+
 pandas
+
+MySQL server (local or remote)
+
+JSON data file: data/fake_property_data_new.json
+
+Field config: data/Field Config.xlsx
+
+Folder structure:
+
+project_root/
+│
+├── scripts/
+│   └── etl_load_data.py
+├── sql/
+│   └── create_tables.sql
+├── data/
+│   ├── fake_property_data_new.json
+│   └── Field Config.xlsx
+├── reports/
+│   └── validation_report.txt
+├── requirements.txt
+└── README.md / documentation.txt
